@@ -34,7 +34,7 @@ boolean_conditional_value ? "thing_to_return_if_true" : "thing_to_return_if_fals
 
 If the expression (_constant expression_ with a Boolean value, _assignment
 expression_,  etc.) is a `true` value, then the return value of the expression
-is "thing_to_return_if_false". If it is `false`, "thing_to_return_if_false` is
+is "thing_to_return_if_true". If it is `false`, "thing_to_return_if_false` is
 returned.
 
 Here's an example to try out:
@@ -80,14 +80,14 @@ always swap a "literal constant value" for "an expression that returns a value"
 in programming. Thus since comparison operations return `true` or `false`, we
 can use one of those expressions in Position 1 of our ternary statement.
 
-Even more awamzing, we can swap out the simple `String`s we've used in
+Even more amazing, we can swap out the simple `String`s we've used in
 Positions 2 and 3 of our ternary with expressions as well.
 
 ```ruby
 top = 2
 bottom = 1
 problem_count = 99
-lucky_number = (top > bottom) ? ( 3 + 1 ) : ( problem_count / 3 ))
+lucky_number = (top > bottom) ? ( 3 + 1 ) : ( problem_count / 3 )
 ```
 
 What's the value of `lucky_number`? Step through the expressions to make you
