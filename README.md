@@ -118,5 +118,3 @@ conditional logic to Ruby!
 return value, but **expressions** always do. This entire module is about
 working with **expressions**. Fear not, though, we'll give the full list of
 conditional **statements** in an upcoming module.
-
-## Resources
