@@ -6,115 +6,121 @@
 
 ## Introduction
 
-As conversationalists with computers, we've come so far so fast!
+As conversationalists with computers, we've come so far so fast! We're able to
+construct complex _expressions_ and store their _evaluations_ in _variables_.
+We can also retrieve those stored values from the variables through the
+_variable lookup expression_.
 
-We now want to learn how to write an expression that expresses "conditional
-thinking" or "if-then" logic. Oh and lets drop some hot gossip:
+But our expressions have always followed a single track: _evaluate_ this one
+single expression, or line of thought. It's like a world of absolute certainty
+in every statement: "My outfit today: rain boots" or "My outfit today: sun
+hat." Real life sometimes needs to vary based on a test of some sort. **IF**
+it's raining: rain boots **OTHERWISE**: sun hat." This means that _complexity_
+is entering our expressions, but we _need_ that complexity so that we can
+capture our problem-solving strategies in code.
 
-***Tons of programmers never learn to use this expression that you're about to
-learn &mdash; they're afraid of it***
-
-We're about to learn **the ternary expression** which is an expression that can
-provide one of two values, based on the truth (or "Boolean value" of a third
-value)
-
->**NOTE** "Ternary" is Latin for "3 per." The previous paragraph shows three
->values being involved in the statement. Let's get to know our friend the
->ternary statement.
+We will now learn how to write an expression that expresses "conditional
+thinking" or "if-then" logic. **The ternary expression** provides this. It's an
+expression that can returns one of two values, based on the truth status of a
+third value. 
 
 ## Identify the Ternary Expression
 
-The ternary statement is an _expression_ just like all the other expressions
-we've already met. It looks like this:
+The ternary expression looks like this:
 
 ```ruby
 # Position 1                # Position 2                # Position 3
 boolean_conditional_value ? "thing_to_return_if_true" : "thing_to_return_if_false"
 ```
 
-If the expression (_constant expression_ with a Boolean value, _assignment
-expression_,  etc.) is a `true` value, then the return value of the expression
-is "thing_to_return_if_true". If it is `false`, "thing_to_return_if_false" is
-returned.
+If the expression in the first position is a `true` value, then the return
+value of the expression is whatever is in Position 2; here,
+`"thing_to_return_if_true"`. If it is `false`, whatever is in Position 3 is
+returned; here, `"thing_to_return_if_false"`.
+
+> **NOTE**: Programmers don't use the terms "Position 1" or "Position 2" in
+> daily use (although they might be smart to adopt a standard!). We're using
+> those only to help communicate about the parts of a ternary expression
+
+Something that a lot of new programmers miss is that this "something `?`
+something `:` something" _expression_ is an _expression_ it has a return value
+***and can be assigned to a variable***!
 
 Here's an example to try out:
 
 ```ruby
 likely_to_rain = true
-garment = likely_to_rain ? "galoshes" : "sun hat"
+garment = likely_to_rain ? "rain boots" : "sun hat"
+garment #=> "rain boots"
 ```
 
-As you see the return value of the ternary expression is assigned to `garment`.
-You can use the _variable lookup expression_ to verify that the value of
-`garment` is `"galoshes"`.
+As you see above, the return value of the ternary expression is assigned to
+`garment`.  You can use the _variable lookup expression_ to verify that the
+value of `garment` is `"rain boots"`.
 
-Try changing the variable with the _assignment expression_ from `true` to
-false. Then run the ternary expression again. The value of `garment` should
-become `sun hat`.
+In IRB, try changing the variable `likely_to_rain` with the _assignment
+expression_ from `true` to `false`. Then run the ternary expression again. The
+value of `garment` should become `sun hat`.
 
-Amazingly, in expression we now have the ability to understand conditional
-logic.
+We now have the ability to express conditional logic in our _expressions_.
 
 ### Moving Beyond Boolean
 
 Keep in mind that the first term in a ternary statement can also be an
-expression. It does not have to be `true` or `false` (_constant expressions_)
-it can be _calculated_ truth; truth calculated by an _expression_.
+expression that returns a Boolean value of `true` or `false`. It _does not_
+have to be the atomic scalar `true` or `false` value.  Instead, in the first
+slot it can be an expression that returns a  _calculated_ truth; truth
+calculated by an _expression_. We'll provide two simple examples here and go
+into a lot more detail in the next lesson.
 
-Recall arithmetic, recall this statement: `2 > 1` is `2` "greater than" 1?  Try
-putting this _expression_ into IRB: does IRB confirm that it `evaluates` to
-`true`?
+From arithmetic, recall this statement: `2 > 1` which expresses is the quantity
+`2` "greater than" `1`?  Try putting this _expression_ into IRB: does IRB
+confirm that it `evaluates` to `true`? It should! That's what we mean by
+_calculated_ truth value. Based on the evaluation of an expression, Ruby
+returned a `true` or `false` value that could be used in the ternary
+expression.
 
 Try updating your original IRB code
 
 ```ruby
-garment = 2 > 1 ? "galoshes" : "sun hat"
+garment = 2 > 1 ? "rain boots" : "sun hat"
+garment #=> "rain boots"
 ```
 
-This logic makes `garment` `"galoshes"` again. Try swapping `>` for `<`, is
-that what you expected?
+This logic makes `garment` `"rain boots"` again. Try swapping `>` for `<`, is
+that what you expected? That's our second means for calculating truth: instead
+of greater-than (`>`), we used less-than (`<`).  These operators are known as
+_comparison operators_. Comparison operators return `true` or `false`. We'll
+meet the whole family of them in the next lesson. 
 
-You've now met two _comparison operators_. Comparison operators return `true`
-or `false`. We'll meet the whole family of them in the next lesson. You can
-always swap a "literal constant value" for "an expression that returns a value"
-in programming. Thus since comparison operations return `true` or `false`, we
-can use one of those expressions in Position 1 of our ternary statement.
+The important thing to take away is that you can always swap a literal `true`
+or `false` for an expression that returns `true` or `false`.
 
-Even more amazing, we can swap out the simple `String`s we've used in
-Positions 2 and 3 of our ternary with expressions as well.
+Even more amazing, we can swap out the simple `String`s we've used in Positions
+2 and 3 of our first ternary with expressions as well.
 
 ```ruby
 top = 2
 bottom = 1
 problem_count = 99
 lucky_number = (top > bottom) ? ( 3 + 1 ) : ( problem_count / 3 )
+lucky_number #=> ??? (Test it out yourself!)
 ```
 
 What's the value of `lucky_number`? Step through the expressions to make you
 understand what happens step by step.
 
-> **STYLE TIP**: To keep reading the expressions in the ternary statement's
+> **STYLE TIP**: To make reading the expressions in the ternary statement's
 > positions clear, we wrap them in `()`. It's done for readability and to
 > prevent accidental order of operations bugs.
 
-## What Provides Truth?
-
-Obviously, given the ternary's power to express conditionals, it's really
-helpful to know which operators express `true` and `false`. In our next lesson
-we'll give a list of Boolean operators.
-
 ## Conclusion
 
-It's an amazing moment when a child moves from mere _variable lookup_ and
-_variable assignment_ to start surfacing the ability to reason between
-hypothetical if-then outcomes. **IF** I touch the stove, I will get hurt;
-**ELSE** I shall stay unhurt. **IF** I sass grandma, I will get a time-out;
-**ELSE** I can eat ice cream. We've now gained the ability to express
-conditional logic to Ruby!
+The ternary expression is where our expression-writing starts to make a leap
+upward in complexity. But if we bear in mind that it's always an expression
+that, itself, contains three "inner" expressions, we'll be able to keep moving
+forward comfortably.
 
-> **NOTE**: Those familiar with programming languages might be wondering, why not use
-`if/else` statements. In most programming languages `if / else` statements are
-**statements** not **expressions**. **Statements** _do not_ always have a
-return value, but **expressions** always do. This entire module is about
-working with **expressions**. Fear not, though, we'll give the full list of
-conditional **statements** in an upcoming module.
+> **NOTE**: Those familiar with programming languages might be wondering, why
+> not use `if/else` statements. We'll work our way up to them, but for now
+> realize that expressions can provide conditional power (and in one line!).
