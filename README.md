@@ -9,20 +9,21 @@
 As conversationalists with computers, we've come so far so fast! We're able to
 construct complex _expressions_ and store their _evaluations_ in _variables_.
 We can also retrieve those stored values from the variables through the
-_variable lookup expression_.
+_variable lookup expression_. We can even assign the results of complex
+arithmetic expressions into those variables.
 
 But our expressions have always followed a single track: _evaluate_ this one
 single expression, or line of thought. It's like a world of absolute certainty
 in every statement: "My outfit today: rain boots" or "My outfit today: sun
-hat." Real life sometimes needs to vary based on a test of some sort. **IF**
+hat." Real-life sometimes needs to vary based on a test of some sort. **IF**
 it's raining: rain boots **OTHERWISE**: sun hat." This means that _complexity_
 is entering our expressions, but we _need_ that complexity so that we can
-capture our problem-solving strategies in code.
+document our problem-solving strategies in code.
 
 We will now learn how to write an expression that expresses "conditional
-thinking" or "if-then" logic. **The ternary expression** provides this. It's an
-expression that can returns one of two values, based on the truth status of a
-third value. 
+thinking" or "if-then" logic. It's called **The ternary expression**. It's an
+expression that can return one of two values, based on the truth-status of its
+first expression.
 
 ## Identify the Ternary Expression
 
@@ -33,20 +34,21 @@ The ternary expression looks like this:
 boolean_conditional_value ? "thing_to_return_if_true" : "thing_to_return_if_false"
 ```
 
-If the expression in the first position is a `true` value, then the return
-value of the expression is whatever is in Position 2; here,
-`"thing_to_return_if_true"`. If it is `false`, whatever is in Position 3 is
-returned; here, `"thing_to_return_if_false"`.
+If the expression in the first position evaluates to anything except `nil` or
+`false`, then the return value of the ternary expression is whatever is in
+Position 2; here, `"thing_to_return_if_true"`. If the expression in Position 1
+returns `nil` or `false`, whatever is in Position 3 is returned; here,
+`"thing_to_return_if_false"`.
 
 > **NOTE**: Programmers don't use the terms "Position 1" or "Position 2" in
 > daily use (although they might be smart to adopt a standard!). We're using
 > those only to help communicate about the parts of a ternary expression
 
 Something that a lot of new programmers miss is that this "something `?`
-something `:` something" _expression_ is an _expression_ it has a return value
-***and can be assigned to a variable***!
+something `:` something" _expression_ is an _expression_ it **has** a return
+value ***and can be assigned to a variable***!
 
-Here's an example to try out:
+Here's an example to try out in IRB:
 
 ```ruby
 likely_to_rain = true
@@ -63,15 +65,20 @@ expression_ from `true` to `false`. Then run the ternary expression again. The
 value of `garment` should become `sun hat`.
 
 We now have the ability to express conditional logic in our _expressions_.
+You should try writing several ternary expressions yourself in IRB to make sure
+you've gotten the hang of things.
+
+> **LEARNING TIP**: Developers learn their craft by making slight experiments
+> to given code: be sure you're adopting that habit now.
 
 ### Moving Beyond Boolean
 
 Keep in mind that the first term in a ternary statement can also be an
 expression that returns a Boolean value of `true` or `false`. It _does not_
-have to be the atomic scalar `true` or `false` value.  Instead, in the first
-slot it can be an expression that returns a  _calculated_ truth; truth
-calculated by an _expression_. We'll provide two simple examples here and go
-into a lot more detail in the next lesson.
+have to be the exact `true` or `false` value.  Instead, in the first slot can
+be an expression that returns a truth value that is calculated by an
+_expression_. We'll provide two simple examples here and go into a lot more
+detail in the next lesson.
 
 From arithmetic, recall this statement: `2 > 1` which expresses is the quantity
 `2` "greater than" `1`?  Try putting this _expression_ into IRB: does IRB
@@ -88,13 +95,13 @@ garment #=> "rain boots"
 ```
 
 This logic makes `garment` `"rain boots"` again. Try swapping `>` for `<`, is
-that what you expected? That's our second means for calculating truth: instead
+that what you expected? That's a second operator for calculating truth: instead
 of greater-than (`>`), we used less-than (`<`).  These operators are known as
 _comparison operators_. Comparison operators return `true` or `false`. We'll
 meet the whole family of them in the next lesson. 
 
-The important thing to take away is that you can always swap a literal `true`
-or `false` for an expression that returns `true` or `false`.
+**The important thing to take away is that you can always swap a literal `true`
+or `false` for an expression that returns `true` or `false`.**
 
 Even more amazing, we can swap out the simple `String`s we've used in Positions
 2 and 3 of our first ternary with expressions as well.
