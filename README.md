@@ -29,8 +29,11 @@ first expression.
 
 The ternary expression looks like this:
 
+![Ternary Graphic](https://curriculum-content.s3.amazonaws.com/programming-univbasics/the-ternary-expression-and-logic/Image_90_TernarysSyntaxPOP.png)
+
+Or, in Ruby:
+
 ```ruby
-# Position 1                # Position 2                # Position 3
 boolean_conditional_value ? "thing_to_return_if_true" : "thing_to_return_if_false"
 ```
 
