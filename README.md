@@ -255,3 +255,8 @@ construction: a statement. Unlike an expression which always returns a value,
 statements are used to help choose which expressions to evaluate or to do
 repetitive tasks. That's Programming as Conversation Part II: Statements. Take a
 virtual high-five from us! You've come a long way!
+
+## Resources
+
+* MDN
+  * [Conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)
