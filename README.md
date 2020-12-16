@@ -15,7 +15,7 @@ sophisticated _expressions_. But so far our expressions have followed a single
 track: _evaluate_ this one single expression, or line of thought. It's like a
 world of absolute certainty in every statement: "My outfit today: rain boots" or
 "My outfit today: sun hat." In real life, however, we sometimes need to base our
-decisions on a test of some sort. **IF** it's raining: rain boots **OTHERWISE**:
+decisions on a test of some sort. "**IF** it's raining: rain boots... **OTHERWISE**:
 sun hat." This means that _complexity_ is entering our expressions; we _need_
 that complexity so that we can express our problem-solving strategies in code.
 
@@ -89,7 +89,7 @@ and our return values more informative:
 
 <iframe height="400px" width="100%" src="https://repl.it/@LizBurton/HungryWealthyVertex?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-Now have three variables and we're using them not only to construct ternary
+Now we have three variables and we're using them not only to construct ternary
 expressions but also to output a more informative message. Try experimenting
 with the values of the variables and see how it affects the return value.
 
@@ -238,7 +238,7 @@ finding your bearings in a programming language. Feel free to return to it.
 
 As you build code in future lessons, be sure to try to make tiny changes and
 make sure the code still works. Flatiron School has learned that the students
-who are most successful in this program are those who make the most "small hops"
+who are most successful in our programs are those who make the most "small hops"
 away from the given content to make the content their own. Programmers usually
 call this "playing with the code." Try swapping out a conditional expression,
 nesting a ternary within a ternary, turning a conditional from < to <=, etc. As
