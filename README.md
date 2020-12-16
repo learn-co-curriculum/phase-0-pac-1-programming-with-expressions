@@ -48,7 +48,7 @@ Let's try an example:
 
 The expression in the first position evaluates to `true`, so the ternary
 expression returns the value after the question mark, "rain boots". Try
-changing the variable `likely_to_rain` with the _assignment expression_ from
+changing the variable `likelyToRain` with the _assignment expression_ from
 `true` to `false`. Then run the ternary expression again. The return value of
 our ternary expression should now be `sun hat`.
 
@@ -218,7 +218,7 @@ const luckyNumber = (first > second) ? ( (problemCount - 1) / 2 ) : ( problemCou
 luckyNumber; //=> ??? (Test it out yourself!)
 ```
 
-What's the value of `lucky_number`? Step through the expressions to make sure you
+What's the value of `luckyNumber`? Step through the expressions to make sure you
 understand what happens step by step.
 
 > **STYLE TIP**: To make reading the expressions in each of the ternary statement's positions easier, we wrap them in `()`. It is not required: it's done for readability and to prevent accidental order of operations bugs.
