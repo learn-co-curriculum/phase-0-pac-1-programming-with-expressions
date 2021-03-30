@@ -20,7 +20,7 @@ sun hat." This means that _complexity_ is entering our expressions; we _need_
 that complexity so that we can express our problem-solving strategies in code.
 
 We will now learn how to write an expression that expresses "conditional
-thinking" or "if-then" logic. It's called **The ternary expression**. It's an
+thinking" or "if-then" logic. It's called the **ternary expression**. It's an
 expression that takes a Boolean value or expression and returns one of two
 values, depending on the truth-status of that first expression.
 
@@ -198,7 +198,7 @@ we don't need to go back and edit the values returned by the ternary.
 
 Once we've done all that, the code defining our return value is much easier to
 read: it no longer includes a jumble of mathematical, comparison, and ternary
-expressions. Furthermore, by using meangingful variable names, we've made it
+expressions. Furthermore, by using meaningful variable names, we've made it
 clear what the final message will consist of:
 
 <iframe height="400px" width="100%" src="https://repl.it/@LizBurton/BitterTeemingAbandonware?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
