@@ -104,7 +104,7 @@ const temperatureInC = 26;
 `Hello, ${name}, with a rain chance of ${probabilityOfRain * 100}% and a temperature of ${temperatureInC}C we recommend that you ` + (rainPercentage > 0.3 ? "take an umbrella" : "enjoy this rain-free day") + `${temperatureInC >= 26 ? ' and watch out for heatstroke.' : ' and bask in this fine weather.'}`;
 ```
 
-Although this code works &mdash; JavaScript knows what we want it to do &mdash;
+Although this code works — JavaScript knows what we want it to do —
 that doesn't make it good code. Recall that programming is _conversation_, not
 just with the JavaScript engine but _also_ with other programmers or ourselves
 in the future. How easy is it to read the line of code that defines our return
@@ -207,7 +207,7 @@ Nice!
 
 One final note before we move on. In the example above, we used simple `String`s
 as the return values in our ternary expressions. But we can use any data type
-here &mdash; numbers, Booleans, objects, etc. And, of course, we can also use
+here — numbers, Booleans, objects, etc. And, of course, we can also use
 more complex expressions. Let's look at an example:
 
 ```js
