@@ -2,8 +2,8 @@
 
 ## Learning Goals
 
-* Identify the Ternary Expression
-* Write a program with conditional logic using expressions
+- Identify the Ternary Expression
+- Write a program with conditional logic using expressions
 
 ## Introduction
 
@@ -15,9 +15,10 @@ sophisticated _expressions_. But so far our expressions have followed a single
 track: _evaluate_ this one single expression, or line of thought. It's like a
 world of absolute certainty in every statement: "My outfit today: rain boots" or
 "My outfit today: sun hat." In real life, however, we sometimes need to base our
-decisions on a test of some sort. "**IF** it's raining: rain boots... **OTHERWISE**:
-sun hat." This means that _complexity_ is entering our expressions; we _need_
-that complexity so that we can express our problem-solving strategies in code.
+decisions on a test of some sort. "**IF** it's raining: rain boots...
+**OTHERWISE**: sun hat." This means that _complexity_ is entering our
+expressions; we _need_ that complexity so that we can express our
+problem-solving strategies in code.
 
 We will now learn how to write an expression that expresses "conditional
 thinking" or "if-then" logic. It's called the **ternary expression**. It's an
@@ -33,7 +34,7 @@ The ternary expression looks like this:
 Or, in code:
 
 ```js
-booleanExpression ? "thingToReturnIfTrue" : "thingToReturnIfFalse"
+booleanExpression ? "thingToReturnIfTrue" : "thingToReturnIfFalse";
 ```
 
 If the expression in the first position evaluates to a truthy value, then the
@@ -47,16 +48,17 @@ Let's try an example:
 <iframe height="400px" width="100%" src="https://repl.it/@LizBurton/SweetNativeQuadrant?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 The expression in the first position evaluates to `true`, so the ternary
-expression returns the value after the question mark, "rain boots". Try
-changing the variable `likelyToRain` with the _assignment expression_ from
-`true` to `false`. Then run the ternary expression again. The return value of
-our ternary expression should now be `sun hat`.
+expression returns the value after the question mark, "rain boots". Try changing
+the variable `likelyToRain` with the _assignment expression_ from `true` to
+`false`. Then run the ternary expression again. The return value of our ternary
+expression should now be `sun hat`.
 
 We now have the ability to express conditional logic. You should try writing
 several ternary expressions yourself in the REPL to make sure you've gotten the
 hang of things.
 
-> **LEARNING TIP**: Developers learn their craft by making slight experiments to given code: be sure you're adopting that habit now.
+> **LEARNING TIP**: Developers learn their craft by making slight experiments to
+> given code: be sure you're adopting that habit now.
 
 ### Moving Beyond Boolean Values
 
@@ -80,12 +82,13 @@ program using expressions.
 
 ## Write a Program with Conditional Logic Using Expressions
 
-Guess what? We've already done this! [According to Wikipedia](https://en.wikipedia.org/wiki/Computer_program), a program is "a collection of instructions that can be
-executed by a computer to perform a specific task." The ternary (set of
-instructions) we looked at above is an _expression_ that performs the task
-of _evaluating a condition_ and, based on the results, _returning a value_.
-But of course we can expand on this, making our conditions more sophisticated
-and our return values more informative:
+Guess what? We've already done this!
+[According to Wikipedia](https://en.wikipedia.org/wiki/Computer_program), a
+program is "a collection of instructions that can be executed by a computer to
+perform a specific task." The ternary (set of instructions) we looked at above
+is an _expression_ that performs the task of _evaluating a condition_ and, based
+on the results, _returning a value_. But of course we can expand on this, making
+our conditions more sophisticated and our return values more informative:
 
 <iframe height="400px" width="100%" src="https://repl.it/@LizBurton/HungryWealthyVertex?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
@@ -101,16 +104,23 @@ const name = "Byron the Poodle";
 const probabilityOfRain = 0.2;
 const temperatureInC = 26;
 
-`Hello, ${name}, with a rain chance of ${probabilityOfRain * 100}% and a temperature of ${temperatureInC}C we recommend that you ` + (rainPercentage > 0.3 ? "take an umbrella" : "enjoy this rain-free day") + `${temperatureInC >= 26 ? ' and watch out for heatstroke.' : ' and bask in this fine weather.'}`;
+`Hello, ${name}, with a rain chance of ${
+  probabilityOfRain * 100
+}% and a temperature of ${temperatureInC}C we recommend that you ` +
+  (rainPercentage > 0.3 ? "take an umbrella" : "enjoy this rain-free day") +
+  `${
+    temperatureInC >= 26
+      ? " and watch out for heatstroke."
+      : " and bask in this fine weather."
+  }`;
 ```
 
-Although this code works — JavaScript knows what we want it to do —
-that doesn't make it good code. Recall that programming is _conversation_, not
-just with the JavaScript engine but _also_ with other programmers or ourselves
-in the future. How easy is it to read the line of code that defines our return
-value? How much work does it take to figure out how it works? Writing good code
-means writing code that not only works but is also as clean and readable as we
-can make it.
+Although this code works — JavaScript knows what we want it to do — that doesn't
+make it good code. Recall that programming is _conversation_, not just with the
+JavaScript engine but _also_ with other programmers or ourselves in the future.
+How easy is it to read the line of code that defines our return value? How much
+work does it take to figure out how it works? Writing good code means writing
+code that not only works but is also as clean and readable as we can make it.
 
 Let's do some _refactoring_.
 
@@ -133,8 +143,8 @@ We can also include variables as part of the evaluated expression:
 const rainPercentage = probabilityOfRain * 100;
 ```
 
-In fact, ***you can assign virtually any _expression_ as the value of a
-variable***, including _comparison_ expressions. So to start, let's use our new
+In fact, **_you can assign virtually any *expression* as the value of a
+variable_**, including _comparison_ expressions. So to start, let's use our new
 `rainPercentage` variable and also create a couple of appropriately named
 variables to store the conditions we're checking in our ternary statements. The
 condition `rainPercentage > 0.3` is basically checking whether it's likely to
@@ -151,7 +161,13 @@ const likelyToRain = probabilityOfRain > 0.3;
 const sunIsDangerous = temperatureInC >= 26;
 const rainPercentage = probabilityOfRain * 100;
 
-`Hello, ${name}, with a rain chance of ${rainPercentage}% and a temperature of ${temperatureInC}C we recommend that you ` + (likelyToRain ? "take an umbrella" : "enjoy this rain-free day") + `${sunIsDangerous ? ' and watch out for heatstroke!' : ' and bask in this fine weather.'}`
+`Hello, ${name}, with a rain chance of ${rainPercentage}% and a temperature of ${temperatureInC}C we recommend that you ` +
+  (likelyToRain ? "take an umbrella" : "enjoy this rain-free day") +
+  `${
+    sunIsDangerous
+      ? " and watch out for heatstroke!"
+      : " and bask in this fine weather."
+  }`;
 ```
 
 This is already a bit easier to read: we've moved the math and some of the logic
@@ -160,20 +176,31 @@ clearer how we're using our conditions and, by extension, what the ternary
 expressions are doing. But we can do better.
 
 We mentioned above that we can assign virtually any expression as the value of a
-variable; this includes _ternary expressions_:
-
-```js
-const rainAdvice = likelyToRain ? "take an umbrella" : "enjoy this rain-free day";
-const sunAdvice = sunIsDangerous ? "and watch out for heatstroke" : "and bask in this fine weather"
-```
+variable; this includes _ternary expressions_.
 
 A ternary expression returns a value, just like any other expression; the value
-it returns is what is assigned to the variable.
+it returns is what is assigned to the variable. You can write ternary expressions
+on one line, like this:
+
+```js
+const advice = raining ? "take an umbrella" : "enjoy this rain-free day";
+```
+
+Or on multiple, like this:
+
+```js
+const rainAdvice = likelyToRain
+  ? "take an umbrella"
+  : "enjoy this rain-free day";
+const sunAdvice = sunIsDangerous
+  ? "and watch out for heatstroke"
+  : "and bask in this fine weather";
+```
 
 Let's update our code, implementing this improvement:
 
 ```js
-const name = "Byron the Poodle"
+const name = "Byron the Poodle";
 const probabilityOfRain = 0.2;
 const temperatureInC = 26;
 
@@ -181,10 +208,16 @@ const likelyToRain = probabilityOfRain > 0.3;
 const sunIsDangerous = temperatureInC >= 26;
 const rainPercentage = probabilityOfRain * 100;
 
-const rainAdvice = likelyToRain ? "take an umbrella" : "enjoy this rain-free day";
-const sunAdvice = sunIsDangerous ? " and watch out for heatstroke" : " and bask in this fine weather";
+const rainAdvice = likelyToRain
+  ? "take an umbrella"
+  : "enjoy this rain-free day";
+const sunAdvice = sunIsDangerous
+  ? " and watch out for heatstroke"
+  : " and bask in this fine weather";
 
-`Hello, ${name}, with a rain chance of ${rainPercentage}% and a temperature of ${temperatureInC}C we recommend that you ` + rainAdvice + sunAdvice;
+`Hello, ${name}, with a rain chance of ${rainPercentage}% and a temperature of ${temperatureInC}C we recommend that you ` +
+  rainAdvice +
+  sunAdvice;
 ```
 
 Much better! But there are still some improvements we can make. For one thing,
@@ -207,27 +240,28 @@ Nice!
 
 One final note before we move on. In the example above, we used simple `String`s
 as the return values in our ternary expressions. But we can use any data type
-here — numbers, Booleans, objects, etc. And, of course, we can also use
-more complex expressions. Let's look at an example:
+here — numbers, Booleans, objects, etc. And, of course, we can also use more
+complex expressions. Let's look at an example:
 
 ```js
 const first = 2;
 const second = 1;
-const problemCount = 99;
-const luckyNumber = (first > second) ? ( (problemCount - 1) / 2 ) : ( problemCount / 3 );
+const problem = 99;
+const luckyNumber = first > second ? (problem - 1) / 2 : problem / 3;
 luckyNumber; //=> ??? (Test it out yourself!)
 ```
 
 What's the value of `luckyNumber`? Step through the expressions to make sure you
 understand what happens step by step.
 
-> **STYLE TIP**: To make reading the expressions in each of the ternary statement's positions easier, we wrap them in `()`. It is not required: it's done for readability and to prevent accidental order of operations bugs.
-
 The ternary expression enables us to make a leap upward in the complexity of our
 expression-writing. An important thing to remember is that a ternary is an
 expression that, itself, is made up of three "inner" expressions.
 
-> **NOTE**: Those familiar with programming languages might be wondering, why not use `if/else` statements. We'll work our way up to them, but for now we have the ability to implement simple conditional decisions in one line of code!
+> **NOTE**: Those familiar with programming languages might be wondering, why
+> not use `if/else` statements. We'll work our way up to them, but for now we
+> have the ability to implement simple conditional decisions in one line of
+> code!
 
 ## Conclusion
 
@@ -258,5 +292,5 @@ virtual high-five from us! You've come a long way!
 
 ## Resources
 
-* MDN
-  * [Conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)
+- MDN
+  - [Conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)
