@@ -43,9 +43,14 @@ here, `"thingToReturnIfTrue"`. If the expression in the first position is
 falsey, however, whatever is in the last position is returned; here,
 `"thingToReturnIfFalse"`.
 
-Let's try an example:
+Let's try an example. Run the following into your REPL console:
 
-<iframe height="400px" width="100%" src="https://repl.it/@LizBurton/SweetNativeQuadrant?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+```js
+  const likelyToRain = true;
+  likelyToRain ? "rain boots" : "sun hat";
+```
+
+<iframe height="400px" width="100%" src="https://repl.it/@LizBurton/SweetNativeQuadrant?lite=true&outputonly=1" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 The expression in the first position evaluates to `true`, so the ternary
 expression returns the value after the question mark, "rain boots". Try changing
@@ -70,7 +75,12 @@ learned about in the previous lessons to construct our expression.
 
 Let's look at an example:
 
-<iframe height="400px" width="100%" src="https://repl.it/@LizBurton/RashUnconsciousSigns?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+```js
+  const rainPercentage = 0.2;
+  rainPercentage > 0.3 ? "rain boots" : "sun hat";
+```
+
+<iframe height="400px" width="100%" src="https://repl.it/@LizBurton/RashUnconsciousSigns?lite=true&outputonly=1" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 Here we see we can make a decision based on a _comparison_. _If_ the chance of
 rain is greater than 30%, we know we should take our rain boots; _otherwise_
@@ -90,7 +100,17 @@ is an _expression_ that performs the task of _evaluating a condition_ and, based
 on the results, _returning a value_. But of course we can expand on this, making
 our conditions more sophisticated and our return values more informative:
 
-<iframe height="400px" width="100%" src="https://repl.it/@LizBurton/HungryWealthyVertex?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+```js
+  //Input values: we could easily imagine asking a user for these values.
+  const name = "Your name here";
+  const rainPercentage = 0.2;
+  const temperatureInC = 26;
+
+  `Hello, ${name}, with a rain chance of ${rainPercentage * 100}% and a temperature of ${temperatureInC}C we recommend that you ` + (rainPercentage > 0.3 ? "take an umbrella" : "enjoy this rain-free day") +
+  `${temperatureInC >= 26 ? ' and watch out for heatstroke.' : ' and bask in this fine weather.'}`;
+```
+
+<iframe height="400px" width="100%" src="https://repl.it/@LizBurton/HungryWealthyVertex?lite=true&outputonly=1" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 Now we have three variables and we're using them not only to construct ternary
 expressions but also to output a more informative message. Try experimenting
@@ -234,7 +254,22 @@ read: it no longer includes a jumble of mathematical, comparison, and ternary
 expressions. Furthermore, by using meaningful variable names, we've made it
 clear what the final message will consist of:
 
-<iframe height="400px" width="100%" src="https://repl.it/@LizBurton/BitterTeemingAbandonware?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+```js
+  const name = "Your name here";
+  const probabilityOfRain = 0.2;
+  const temperatureInC = 26;
+
+  const likelyToRain = probabilityOfRain > 0.3;
+  const sunIsDangerous = temperatureInC >= 26;
+
+  const rainPercentage = probabilityOfRain * 100;
+  const rainAdvice = likelyToRain ? "take an umbrella" : "enjoy this rain-free day";
+  const sunAdvice = sunIsDangerous ? "watch out for heatstroke" : "bask in this fine weather";
+
+  `Hello, ${name}, with a rain chance of ${rainPercentage}% and a temperature of ${temperatureInC}C we recommend that you ${rainAdvice} and ${sunAdvice}.`;
+```
+
+<iframe height="400px" width="100%" src="https://repl.it/@LizBurton/BitterTeemingAbandonware?lite=true&outputonly=1" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 Nice!
 
