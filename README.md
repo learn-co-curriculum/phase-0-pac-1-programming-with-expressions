@@ -232,9 +232,16 @@ we don't need to go back and edit the values returned by the ternary.
 Once we've done all that, the code defining our return value is much easier to
 read: it no longer includes a jumble of mathematical, comparison, and ternary
 expressions. Furthermore, by using meaningful variable names, we've made it
-clear what the final message will consist of:
+clear what the final message will consist of! Test it out by adding the
+following code to your console. THen, change the value of `likelyToRain` from
+truthy to falsey.
 
-<iframe height="400px" width="100%" src="https://repl.it/@LizBurton/BitterTeemingAbandonware?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+```js
+const likelyToRain = true;
+likelyToRain ? "rain boots" : "sun hat";
+```
+
+<iframe height="400px" width="100%" src="https://replit.com/@lizbur10/Sandbox?lite=1&outputonly=1" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 Nice!
 
