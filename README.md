@@ -250,6 +250,8 @@ read: it no longer includes a jumble of mathematical, comparison, and ternary
 expressions. Furthermore, by using meaningful variable names, we've made it
 clear what the final message will consist of.
 
+Be sure to verify that our refactored code still works!
+
 ```js
 const name = "Your name here";
 const probabilityOfRain = 0.2;
