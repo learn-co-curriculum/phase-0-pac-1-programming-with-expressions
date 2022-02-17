@@ -2,8 +2,10 @@
 
 ## Learning Goals
 
+- Use the code window in replit to try out code
 - Identify the Ternary Expression
 - Write a program with conditional logic using expressions
+- Refactor code
 
 ## Introduction
 
@@ -20,10 +22,87 @@ decisions on a test of some sort. "**IF** it's raining: rain boots...
 expressions; we _need_ that complexity so that we can express our
 problem-solving strategies in code.
 
-We will now learn how to write an expression that expresses "conditional
-thinking" or "if-then" logic. It's called the **ternary expression**. It's an
-expression that takes a Boolean value or expression and returns one of two
-values, depending on the truth-status of that first expression.
+In this lesson, we will learn how to write an expression that expresses
+"conditional thinking" or "if-then" logic. It's called the **ternary
+expression**. It's an expression that takes a Boolean value or expression and
+returns one of two values, depending on the truth-status of that first
+expression. We will also learn how to write a program using conditional
+expressions. Before we get to that, though, let's expand our [replit][] skills a
+bit.
+
+## Using the Code Window in replit
+
+So far, we've been using the console window in [replit][] and ignoring the code
+window. Now we're going to learn how we can use the code window to make it
+easier to write, test, and experiment with code. Go ahead and open [replit][].
+
+When you open it, you'll see a single line of code in the code window on the
+left side:
+
+```js
+console.log('Hello, world!')
+```
+
+If you click the "Run" button, you will see the message "Hello, world!" written
+out in the console window on the right. You will learn more about using
+`console.log()` a bit later in this section. For now, just know that
+`console.log()` allows us to write code in the code window and print out results
+of that code to the console.
+
+When you pressed "Run", the REPL _evaluated_ the expression inside the
+parentheses, and then printed that value out to the console. In this case, there
+is a constant expression inside the parentheses, so that value is what is
+output. But we can put other types of expressions in the parentheses as well.
+
+For example, try entering the following into the code window, then press "Run".
+
+```js
+const sum = 1 + 1;
+
+console.log(sum);
+```
+
+You should see the value `2` written to the console.
+
+What do you think will happen if you type the following into the code window and
+run it?
+
+```js
+console.log(5 * 5);
+```
+
+As long as whatever is inside the parentheses _evaluates to a value_ — i.e., as
+long as it's an expression — that value will be logged in the console.
+
+So now we know two different ways to check the value of an expression in the
+REPL: we can either wrap it in a `console.log()` in the code window and press
+"Run", or we can enter it directly in the console window and hit enter.
+
+Note that we could also combine the two approaches. Go ahead and enter this line
+of code into the code window and click "Run":
+
+```js
+const difference = 10 - 5;
+```
+
+Although it doesn't appear that anything happens because nothing is printed to
+the console, when we clicked "Run", JavaScript evaluated the arithmetic
+expression and stored that value in the variable `difference`. Now type
+`difference;` in the _console window_ and hit enter.
+
+**Important**: the evaluation and assignment happen when you click "Run". If you
+just paste the code into the code window and then try to check the value of
+`difference` in the console, it won't work.
+
+Often, it's inconvenient to type or copy/paste code into the console — if you're
+working with a large block of code, for example, or if you want to be able to
+make multiple changes. Putting code in the code window makes it easier to
+correct errors and try different things.
+
+As you work through the curriculum, we encourage you to use [replit][] to try
+out code samples from the lessons and to experiment with your own examples. Now
+that you know how to use the code window, you have another tool at your
+disposal.
 
 ## Identify the Ternary Expression
 
@@ -43,24 +122,32 @@ here, `"thingToReturnIfTrue"`. If the expression in the first position is
 falsey, however, whatever is in the last position is returned; here,
 `"thingToReturnIfFalse"`.
 
-Let's try an example:
+Let's try an example. Go ahead and copy the code below into the _code window_ of
+replit. When you click the "Run" button, JavaScript will log the value of
+`clothingChoice` to the console.
 
 ```js
 const likelyToRain = true;
-likelyToRain ? "rain boots" : "sun hat";
-```
+const clothingChoice = likelyToRain ? "rain boots" : "sun hat";
 
-<iframe height="400px" width="100%" src="https://replit.com/@lizbur10/Sandbox?lite=1&outputonly=1" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+console.log(clothingChoice);
+```
 
 The expression in the first position evaluates to `true`, so the ternary
 expression returns the value after the question mark, "rain boots". Try changing
-the variable `likelyToRain` with the _assignment expression_ from `true` to
-`false`. Then run the ternary expression again. The return value of our ternary
-expression should now be `sun hat`.
+the variable `likelyToRain` from `true` to `false` in the code window, then
+press "Run" again. The return value of our ternary expression should now be `sun
+hat`.
 
 We now have the ability to express conditional logic. You should try writing
 several ternary expressions yourself in the REPL to make sure you've gotten the
 hang of things.
+
+> **Note**: we will add `console.log()`s to the code samples in this lesson so
+> you just need to click "Run" to see the results. If you want to check the
+> value of any other expressions or variables, you can either add more
+> `console.log()`s to the code window or check the values directly in the
+> console. Remember to click "Run"!
 
 > **LEARNING TIP**: Developers learn their craft by making slight experiments to
 > given code: be sure you're adopting that habit now.
@@ -77,7 +164,9 @@ Let's look at an example:
 
 ```js
 const rainPercentage = 0.2;
-rainPercentage > 0.3 ? "rain boots" : "sun hat";
+const clothingChoice = rainPercentage > 0.3 ? "rain boots" : "sun hat";
+
+console.log(clothingChoice);
 ```
 
 Here we see we can make a decision based on a _comparison_. _If_ the chance of
@@ -101,37 +190,19 @@ our conditions more sophisticated and our return values more informative:
 ```js
 // Input values: we could easily imagine asking a user for these values.
 const name = "Your name here";
-const rainPercentage = 0.2;
+const probabilityOfRain = 0.2;
 const temperatureInC = 26;
 
-`Hello, ${name}, with a rain chance of ${rainPercentage * 100}% and a temperature of ${temperatureInC}C we recommend that you ` + (rainPercentage > 0.3 ? "take an umbrella" : "enjoy this rain-free day") +
+// Create our message
+const message = `Hello, ${name}, with a rain chance of ${probabilityOfRain * 100}% and a temperature of ${temperatureInC}C we recommend that you ` + (probabilityOfRain > 0.3 ? "take an umbrella" : "enjoy this rain-free day") +
 `${temperatureInC >= 26 ? ' and watch out for heatstroke.' : ' and bask in this fine weather.'}`;
-```
 
-<iframe height="400px" width="100%" src="https://replit.com/@lizbur10/Sandbox?lite=1&outputonly=1" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+console.log(message);
+```
 
 Now we have three variables and we're using them not only to construct ternary
 expressions but also to output a more informative message. Try experimenting
 with the values of the variables and see how it affects the return value.
-
-Let's take a closer look at the code:
-
-```js
-//Input values: we could easily imagine asking a user for these values.
-const name = "Spinach the Shiba";
-const probabilityOfRain = 0.2;
-const temperatureInC = 26;
-
-`Hello, ${name}, with a rain chance of ${
-  probabilityOfRain * 100
-}% and a temperature of ${temperatureInC}C we recommend that you ` +
-  (rainPercentage > 0.3 ? "take an umbrella" : "enjoy this rain-free day") +
-  `${
-    temperatureInC >= 26
-      ? " and watch out for heatstroke."
-      : " and bask in this fine weather."
-  }`;
-```
 
 Although this code works — JavaScript knows what we want it to do — that doesn't
 make it good code. Recall that programming is _conversation_, not just with the
@@ -140,7 +211,7 @@ How easy is it to read the line of code that defines our return value? How much
 work does it take to figure out how it works? Writing good code means writing
 code that not only works but is also as clean and readable as we can make it.
 
-Let's do some _refactoring_.
+## Refactoring our Code
 
 We have learned that, in assigning values to variables, we can use constant
 values:
@@ -158,6 +229,7 @@ const rainPercentage = 0.2 * 100;
 We can also include variables as part of the evaluated expression:
 
 ```js
+const probabilityOfRain = 0.2;
 const rainPercentage = probabilityOfRain * 100;
 ```
 
@@ -165,7 +237,7 @@ In fact, **_you can assign virtually any *expression* as the value of a
 variable_**, including _comparison_ expressions. So to start, let's use our new
 `rainPercentage` variable and also create a couple of appropriately named
 variables to store the conditions we're checking in our ternary statements. The
-condition `rainPercentage > 0.3` is basically checking whether it's likely to
+condition `probabilityOfRain > 0.3` is basically checking whether it's likely to
 rain, while the condition `temperatureInC >= 26` is checking whether it's hot
 enough that we should stay out of the sun. Once we've created the variables we
 can then use them in our ternary statements:
@@ -179,43 +251,50 @@ const likelyToRain = probabilityOfRain > 0.3;
 const sunIsDangerous = temperatureInC >= 26;
 const rainPercentage = probabilityOfRain * 100;
 
-`Hello, ${name}, with a rain chance of ${rainPercentage}% and a temperature of ${temperatureInC}C we recommend that you ` +
+const message = `Hello, ${name}, with a rain chance of ${rainPercentage}% and a temperature of ${temperatureInC}C we recommend that you ` +
   (likelyToRain ? "take an umbrella" : "enjoy this rain-free day") +
   `${
     sunIsDangerous
       ? " and watch out for heatstroke!"
       : " and bask in this fine weather."
   }`;
+
+console.log(message);
 ```
 
-This is already a bit easier to read: we've moved the math and some of the logic
-out of our return value; we've also used meaningful variable names that make it
-clearer how we're using our conditions and, by extension, what the ternary
-expressions are doing. But we can do better.
+This is already a bit easier to read. We've:
+
+1. moved the math and some of the logic out of our return value
+2. used meaningful variable names that make it clearer how we're using our
+   conditions and, by extension, what the ternary expressions are doing
+3. split out our message onto multiple lines to make it easier to follow the
+   logic.
+
+But we can do better.
 
 We mentioned above that we can assign virtually any expression as the value of a
 variable; this includes _ternary expressions_.
 
 A ternary expression returns a value, just like any other expression; the value
-it returns is what is assigned to the variable. You can write ternary expressions
-on one line, like this:
+it returns is what is assigned to the variable. Here's an example:
 
 ```js
 const advice = raining ? "take an umbrella" : "enjoy this rain-free day";
 ```
 
-Or on multiple, like this:
+The value assigned to `advice` will be "take an umbrella" if `raining` is
+`true`, and "enjoy this rain-free day" otherwise.
+
+Note that we can write ternary expressions on one line, as we did above, or on
+multiple lines:
 
 ```js
 const rainAdvice = likelyToRain
   ? "take an umbrella"
   : "enjoy this rain-free day";
-const sunAdvice = sunIsDangerous
-  ? "and watch out for heatstroke"
-  : "and bask in this fine weather";
 ```
 
-Let's update our code, implementing this improvement:
+Let's update our code, implementing these improvements:
 
 ```js
 const name = "Spinach the Shiba";
@@ -233,7 +312,9 @@ const sunAdvice = sunIsDangerous
   ? " and watch out for heatstroke"
   : " and bask in this fine weather";
 
-`Hello, ${name}, with a rain chance of ${rainPercentage}% and a temperature of ${temperatureInC}C we recommend that you ` + rainAdvice + sunAdvice;
+const message = `Hello, ${name}, with a rain chance of ${rainPercentage}% and a temperature of ${temperatureInC}C we recommend that you ` + rainAdvice + sunAdvice;
+
+console.log(message);
 ```
 
 Much better! But there are still some improvements we can make. For one thing,
@@ -253,7 +334,7 @@ clear what the final message will consist of.
 Be sure to verify that our refactored code still works!
 
 ```js
-const name = "Your name here";
+const name = "Spinach the Shiba";
 const probabilityOfRain = 0.2;
 const temperatureInC = 26;
 
@@ -264,10 +345,10 @@ const rainPercentage = probabilityOfRain * 100;
 const rainAdvice = likelyToRain ? "take an umbrella" : "enjoy this rain-free day";
 const sunAdvice = sunIsDangerous ? "watch out for heatstroke" : "bask in this fine weather";
 
-`Hello, ${name}, with a rain chance of ${rainPercentage}% and a temperature of ${temperatureInC}C we recommend that you ${rainAdvice} and ${sunAdvice}.`;
-```
+const message = `Hello, ${name}, with a rain chance of ${rainPercentage}% and a temperature of ${temperatureInC}C we recommend that you ${rainAdvice} and ${sunAdvice}.`;
 
-<iframe height="400px" width="100%" src="https://replit.com/@lizbur10/Sandbox?lite=1&outputonly=1" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+console.log(message);
+```
 
 Nice!
 
@@ -327,3 +408,5 @@ virtual high-five from us! You've come a long way!
 
 - MDN
   - [Conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)
+
+[replit]: https://replit.com/languages/javascript
