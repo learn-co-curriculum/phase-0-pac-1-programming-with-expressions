@@ -239,8 +239,9 @@ variable_**, including _comparison_ expressions. So to start, let's use our new
 variables to store the conditions we're checking in our ternary statements. The
 condition `probabilityOfRain > 0.3` is basically checking whether it's likely to
 rain, while the condition `temperatureInC >= 26` is checking whether it's hot
-enough that we should stay out of the sun. Once we've created the variables we
-can then use them in our ternary statements:
+enough that we should stay out of the sun. Once we've created these variables,
+we can then use them instead of including the math in the message, which will
+make it a little easier to read:
 
 ```js
 const name = "Spinach the Shiba";
@@ -294,7 +295,8 @@ const rainAdvice = likelyToRain
   : "enjoy this rain-free day";
 ```
 
-Let's update our code, implementing these improvements:
+Let's create variables to hold the results of our ternary expressions and use
+thos in our message as well:
 
 ```js
 const name = "Spinach the Shiba";
