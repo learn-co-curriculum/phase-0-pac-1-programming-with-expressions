@@ -296,7 +296,7 @@ const rainAdvice = likelyToRain
 ```
 
 Let's create variables to hold the results of our ternary expressions and use
-thos in our message as well:
+those in our message as well:
 
 ```js
 const name = "Spinach the Shiba";
