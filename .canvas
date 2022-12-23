@@ -1,6 +1,6 @@
 ---
 :lessons:
-- :id: 233766
-  :course_id: 6602
-  :canvas_url: https://learning.flatironschool.com/courses/6602/pages/programming-with-expressions
-  :type: page
+  - :id: 240926
+    :course_id: 6602
+    :canvas_url: https://learning.flatironschool.com/courses/6602/pages/programming-with-expressions
+    :type: page
